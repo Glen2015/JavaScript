@@ -1,0 +1,23 @@
+Here is a method to make a tab sub_page for a page using JS:
+JS:
+$(document).ready(function() {
+    //新增任务菜单切换
+    $(".w-tab ul li").click(function(){
+        $(".w-tab ul li").removeClass();//delete the 'sel' class, make the tab look like it's not on click and it's color is like others 
+        $(this).addClass("sel"); //change the color on this tab showing it's on click and different from other tab
+        var tid = $(this).attr("targetid");//get the tab's targetid
+        $(".renwu").hide();//hide the whole page
+        $("#"+tid).show();//show the specified page whose targetid is 'tid'
+    })
+}
+Front end page:
+<!--配置菜单-->
+    <div class="w-tab">
+        <ul>
+            <li class="sel" targetid="jcpz" ><a href="javascript:;"  target="wcontent">基础配置</a></li>
+<!--            <li targetid="smdx" ><a href="javascript:;"target="wcontent">扫描对象</a></li>-->
+            <li targetid="zjpz" ><a href="javascript:;" target="wcontent">主机扫描配置</a></li>
+           <li targetid="webpz" ><a href="javascript:;" target="wcontent">Web扫描配置</a></li>
+            <li targetid="rklpz" ><a href="javascript:;" target="wcontent">弱口令扫描配置</a></li>
+        </ul>
+    </div>
